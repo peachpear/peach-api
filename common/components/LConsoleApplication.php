@@ -23,7 +23,7 @@ class LConsoleApplication extends Application
         ini_set("display_errors", true);
         $this->initAliases($config);
 
-        // 加载配置中心文件，替换config
+        // 加载配置中心文件，完善config
         if (!empty($config["configService"])) {
             $filePath = $config["configService"]["filePath"];
             $fileExtension = $config["configService"]["fileExt"];
@@ -37,6 +37,7 @@ class LConsoleApplication extends Application
     }
 
     /**
+     * 初始化配置别名
      * @param $config
      */
     public function initAliases(&$config)
