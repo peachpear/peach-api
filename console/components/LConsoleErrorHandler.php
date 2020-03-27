@@ -14,9 +14,10 @@ class LConsoleErrorHandler extends ErrorHandler
 {
     /**
      * 处理异常
-     * 覆盖父类定义 yii\base\ErrorHandler\handleException()
+     * 覆盖父类定义 yii\base\ErrorHandler->handleException()
      * set_exception_handler([$this, 'handleException']);
      * @param \Exception $exception
+     * @throws \Exception
      */
     public function handleException($exception)
     {
@@ -29,13 +30,14 @@ class LConsoleErrorHandler extends ErrorHandler
 
     /**
      * 处理错误
-     * 覆盖父类定义 yii\base\ErrorHandler\handleError()
+     * 覆盖父类定义 yii\base\ErrorHandler->handleError()
      * set_error_handler([$this, 'handleError']);
      * @param int $code
      * @param string $message
      * @param string $file
      * @param int $line
      * @return bool|void
+     * @throws \Exception
      */
     public function handleError($code, $message, $file, $line)
     {
@@ -45,7 +47,7 @@ class LConsoleErrorHandler extends ErrorHandler
 
     /**
      * 处理致命错误
-     * 覆盖父类定义 yii\base\ErrorHandler\handleFatalError()
+     * 覆盖父类定义 yii\base\ErrorHandler->handleFatalError()
      * register_shutdown_function([$this, 'handleFatalError']);
      * @throws \Exception
      */
@@ -71,7 +73,7 @@ class LConsoleErrorHandler extends ErrorHandler
 
     /**
      * 渲染输出错误异常
-     * 覆盖父类定义 yii\console\ErrorHandler\renderException()
+     * 覆盖父类定义 yii\console\ErrorHandler->renderException()
      * @param \Exception $exception
      */
     public function renderException($exception)

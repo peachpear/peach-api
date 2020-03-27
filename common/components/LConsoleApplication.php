@@ -7,6 +7,7 @@ use yii\console\Application;
 use yii\helpers\ArrayHelper;
 
 /**
+ * 命令行应用
  * Class LConsoleApplication
  * @package common\components
  */

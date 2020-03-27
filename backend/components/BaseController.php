@@ -22,7 +22,7 @@ abstract class BaseController extends LController
 
 		// 写入日志
         $pathInfo = Yii::$app->request->getPathInfo();
-        if ( !LLogRequestBlackListService::inBlackList($pathInfo) ) {
+        if (!LLogRequestBlackListService::inBlackList($pathInfo)) {
             $name = "POST";
             if (Yii::$app->request->getIsGet()) {
                 $data = Yii::$app->request->get();
