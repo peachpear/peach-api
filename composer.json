@@ -24,8 +24,19 @@
         }
     ],
     "require": {
-        "php": "7.1.*",
-        "yiisoft/yii2": "2.0.38",
-        "peachpear/pear-leaf": "1.0.*"
+        "php": "^7.1.0",
+        "yiisoft/yii2": "~2.0.0",
+        "peachpear/phpdotenv": "^1.0.0"
+    },
+    "replace": {
+        "bower-asset/jquery": ">=1.11.0",
+        "bower-asset/inputmask": ">=3.2.0",
+        "bower-asset/punycode": ">=1.3.0",
+        "bower-asset/yii2-pjax": ">=2.0.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
     }
 }

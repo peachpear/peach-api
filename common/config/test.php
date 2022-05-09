@@ -5,16 +5,12 @@ $baseConfig = include('base.php');
 $commonConfig = array(
     'components' => [
         'demoDB' => [
-            'dsn' => '',
-            'username' => '',
-            'password' => '',
+            'dsn' => Dotenv\Dotenv::get("demoDB.dsn"),
+            'username' => Dotenv\Dotenv::get("demoDB.username"),
+            'password' => Dotenv\Dotenv::get("demoDB.password"),
         ],
     ],
     'params' => [],
-    "configService" => [
-        "filePath" => "/config/test/",
-        "fileExt" => "json",
-    ]
 );
 
 return [$baseConfig, $commonConfig];

@@ -1,9 +1,7 @@
 <?php
 namespace common\components;
 
-use peachpear\pearLeaf\ConfigService;
 use Yii;
-use yii\helpers\ArrayHelper;
 use yii\web\Application;
 
 /**
@@ -22,16 +20,6 @@ class LApplication extends Application
     public function __construct(array $config = [])
     {
         $this->initAliases($config);
-
-        // 加载配置中心文件，完善config
-        if (!empty($config["configService"])) {
-            $filePath = $config["configService"]["filePath"];
-            $fileExtension = $config["configService"]["fileExt"];
-            $configService = ConfigService::getInstance($filePath, $fileExtension);
-            $configService->loadJson($config);
-            $config = ArrayHelper::merge($config, $configService->getConfig());
-            unset($config["configService"]);
-        }
 
         parent::__construct($config);
     }

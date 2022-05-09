@@ -36,6 +36,9 @@ composer.lock
 backend/config/main.php
 console/config/main.php
 
+# env-config
+.env
+
 # runtime
 backend/runtime/*
 console/runtime/*
